@@ -1,0 +1,40 @@
+{% comment %} after css {% endcomment %}
+{% load static %}
+<!DOCTYPE html>
+{% comment %} this is going to make the page dynamic, based on the input by a user to the db {% endcomment %}
+{% comment %} we tape into the database and call the date, tilte and test in our html skeleton {% endcomment %}
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+        <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+        <title>Django Girls blog</title>
+    </head>
+    <body>
+        <header class="page-header">
+            <div class="container">
+                <h1><a href="/">Django Girls Blog</a></h1>
+            </div>
+        </header>
+        <hr>
+        <hr>
+        
+
+        {% comment %} for ever post in the db which we tapped in the views.py make this article {% endcomment %}
+        <main class="container">
+            <div class="row">
+                <div class='col'>
+                    {% for post in posts %} 
+                        <article class="post">
+                            <time class='date'>published: {{post.published_date }}</time>
+                            <h2><a href="">{{post.title}}</a></h2>
+                            <p>{{post.text | linebreaks }}</p>
+                            <hr>
+                        </article>
+                    {% endfor %}
+                </div>
+            </div>
+        </main>
+    </body>
+</html>
