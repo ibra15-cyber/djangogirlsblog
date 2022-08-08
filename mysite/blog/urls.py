@@ -4,6 +4,6 @@ from . import views  #views the code that will be rendered
 
 urlpatterns = [
     path('', views.post_list),
-    # path('post/<int:pk>/', views.post_detail, name='post.detail'), #post/1 post/2
-   
+    path('post/<int:pk>/', views.post_detail, name='post.detail'), #post/1 post/2
+    #remember post is just our choosing
 ]

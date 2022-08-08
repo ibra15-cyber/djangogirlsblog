@@ -1,2 +1,34 @@
 *.log
 virualenv/
+
+*.pyc
+*~
+__pycache__
+
+#ENV
+.env
+virtual/
+venv/
+
+#database
+db.sqlite3
+
+#static folder at project root
+/static/
+
+# macOS
+._*
+.DS_Store
+.fseventsd
+.Spotlight-V100
+
+# Windows
+Thumbs.db*
+ehthumbs*.db
+[Dd]esktop.ini
+$RECYCLE.BIN/
+
+# Visual Studio
+.vscode/
+.history/
+*.code-workspace
