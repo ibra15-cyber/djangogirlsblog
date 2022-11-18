@@ -14,8 +14,8 @@ class Post(models.Model): #inherits models.Model to define the fields
 
     #characters or methods
     def publish(self):
-        self.published_date = time.now() #time.now given to published
-        self.save()
+        published_date = time.now() #time.now given to published
+        save()
 
     def __str__(self):
         return self.title

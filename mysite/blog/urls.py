@@ -3,7 +3,12 @@ from . import views  #views the code that will be rendered
 
 
 urlpatterns = [
+    #goes to / show everything
     path('', views.post_list),
-    path('post/<int:pk>/', views.post_detail, name='post.detail'), #post/1 post/2
+    #this link, post/1 goes to post_detail view with post detail html
+    path('post/<int:pk>/', views.post_detail, name='post_detail'), 
     #remember post is just our choosing
+    path('post/new/', views.post_new, name='post_new'),
+    path('post/<int:pk>/edit/', views.post_edit, name='post_edit'),
+
 ]

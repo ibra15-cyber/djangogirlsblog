@@ -4,7 +4,8 @@
     {% for post in posts %} 
         <article class="post">
             <time class='date'>published: {{post.published_date }}</time>
-            <h2><a href="{% url 'post_detail' pk=post.pk %}">{{post.title}}</a></h2>
+            <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+            <p id='1'>by {{post.author}}</p>
             <p>{{post.text | linebreaks }}</p>
             <hr>
         </article>
